@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  football: "FOOTBALL"
+  home: "HOME"
+  help: "HELP"
+  login: "LOGIN"
+  about: "ABOUT"
+  index:
+    title: "This is the title of index page"
