@@ -1,3 +1,3 @@
 class Club < ApplicationRecord
-  has_many :players, dependent: :destroy
+  has_many :match, dependent: :destroy
 end
