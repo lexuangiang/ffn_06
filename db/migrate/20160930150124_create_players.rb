@@ -6,7 +6,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string :position
       t.float :height
       t.float :weight
-      t.references :club, index: true, foreign_key: true
+      t.references :club, foreign_key: true
 
       t.timestamps
     end

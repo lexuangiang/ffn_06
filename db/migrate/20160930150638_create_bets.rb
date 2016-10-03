@@ -4,9 +4,9 @@ class CreateBets < ActiveRecord::Migration[5.0]
       t.float :home_coin
       t.float :away_coin
       t.boolean :bet_status
-      t.references :score, index: true, foreign_key: true
-      t.references :match, index: true, foreign_key: true
-      t.references :user, index: true, foreign_key: true
+      t.references :user, foreign_key: true
+      t.references :match, foreign_key: true
+      t.references :score, foreign_key: true
 
       t.timestamps
     end

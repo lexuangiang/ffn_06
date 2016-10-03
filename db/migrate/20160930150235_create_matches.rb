@@ -8,8 +8,8 @@ class CreateMatches < ActiveRecord::Migration[5.0]
       t.boolean :match_status
       t.integer :home_id
       t.integer :away_id
-      t.references :rate, index: true, foreign_key: true
-      t.references :club, index: true, foreign_key: true
+      t.references :rate, foreign_key: true
+      t.references :club, foreign_key: true
 
       t.timestamps
     end
