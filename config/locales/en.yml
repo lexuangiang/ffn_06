@@ -30,6 +30,10 @@ en:
   confirmation: "Confirmation"
   logout: "LOGOUT"
   account: "Account"
+  profile: "Profile"
+  update: "Update your profile"
+  save: "Save changes"
+  setting: "Settings"
   index:
     title: "This is the title of index page"
   users:

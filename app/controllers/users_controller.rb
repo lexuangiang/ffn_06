@@ -22,6 +22,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by id: params[:id]
+    unless @user
+      flash[:warning] = I18n.t "users.not_found"
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @user = User.find_by id: params[:id]
+    if @user.update_attributes user_params
+      flash[:success] = I18n.t "update"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit :user_name, :email, :password,
