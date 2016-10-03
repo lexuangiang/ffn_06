@@ -26,5 +26,14 @@ en:
   help: "HELP"
   login: "LOGIN"
   about: "ABOUT"
+  create: "Create my account"
+  confirmation: "Confirmation"
   index:
     title: "This is the title of index page"
+  users:
+    errors_signup_account: " The form contains Errors"
+    success: "Signup success"
+    not_found: "cannot found users"
+    singup: "Sign Up"
+    create: "Create my Account"
+
