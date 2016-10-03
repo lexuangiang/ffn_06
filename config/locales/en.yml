@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "hello"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("hello") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -28,6 +28,8 @@ en:
   about: "ABOUT"
   create: "Create my account"
   confirmation: "Confirmation"
+  logout: "LOGOUT"
+  account: "Account"
   index:
     title: "This is the title of index page"
   users:
@@ -36,4 +38,4 @@ en:
     not_found: "cannot found users"
     singup: "Sign Up"
     create: "Create my Account"
-
+    invalid: "Invalid email/password combination"
