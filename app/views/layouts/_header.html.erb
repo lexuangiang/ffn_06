@@ -4,6 +4,8 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("home"), root_path %></li>
+        <li><%= link_to t("home"), "#" %></li>
+        <li><%= link_to t("clubs"), clubs_path %></li>
         <li><%= link_to t("help"), "#" %></li>
         <% if logged_in? %>
           <li class="dropdown">
