@@ -1,0 +1,28 @@
+<%= form_for @club, html:{multipart: true} do |f| %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= pluralize @club.errors.count, t("club.error_form") %>.
+    </div>
+    <% @club.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+  <%= f.label :club_name %>
+  <%= f.text_field :club_name %><br>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %><br>
+
+  <%= f. label :stadium %>
+  <%= f.text_field :stadium %><br>
+
+  <%= f.label :coach %>
+  <%= f.text_field :coach %><br>
+
+  <%= f.label :founding %>
+  <%= f.date_field :founding, placeholder: t("club.date_time_format") %><br>
+
+  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+
+  <%= f.submit %>
+<% end %>
