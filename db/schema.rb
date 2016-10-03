@@ -135,9 +135,11 @@ ActiveRecord::Schema.define(version: 20161001092026) do
     t.string   "user_name"
     t.string   "email"
     t.boolean  "isadmin"
-    t.float    "coin",       limit: 24
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.float    "coin",            limit: 24
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   add_foreign_key "bets", "matches"
