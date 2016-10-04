@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  before_action :find_club, only: [:edit, :show]
+  before_action :check_correct_club, only: [:edit, :show]
 
   def index
     @clubs = Club.asc_by_name.paginate page: params[:page],
@@ -7,6 +7,8 @@ class ClubsController < ApplicationController
   end
 
   def show
+    @players = @club.players.asc_by_name.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def new
@@ -39,7 +41,7 @@ class ClubsController < ApplicationController
       :coach, :founding,:image
   end
 
-  def find_club
+  def check_correct_club
     @club = Club.find_by id: params[:id]
     unless @club
       flash[:warning] = I18n.t "club.club_not_found"
