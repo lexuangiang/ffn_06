@@ -50,6 +50,7 @@ en:
     date_time_format: "dd/mm/yyyy"
     club_not_found: "Clubs not found !"
     error_form: " The form contains Errors"
+    players_list: "Players list"
   player:
     error_image: "should be less than 5MB"
     not_found: "Player not found !"

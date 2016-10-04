@@ -4,3 +4,7 @@
 <%= @club.stadium %>
 <%= @club.founding %><br>
 <%= @club.location %>
+<%= t "club.players_list" %>
+<% @players.each do |player| %>
+  <%= player.player_name %>
+<% end %>
