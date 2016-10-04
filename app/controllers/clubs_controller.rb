@@ -20,6 +20,7 @@ class ClubsController < ApplicationController
     if @club.save
       redirect_to @club
     else
+      @errors = @club.errors.size
       render :new
     end
   end

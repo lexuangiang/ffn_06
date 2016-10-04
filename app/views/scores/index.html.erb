@@ -1,0 +1,9 @@
+<div class="row">
+  <% @scores.each do |score| %>
+    <div class="col-sm-4">
+      <p><%= score.home_score %></p>
+      <p><%= score.away_score %></p>
+    </div>
+  <% end %>
+  <%= will_paginate @score %>
+</div>

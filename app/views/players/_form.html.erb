@@ -1,7 +1,7 @@
 <%= form_for @player, html: {multipart: true} do |f| %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <%= pluralize @player.errors.count, t("player.error_form") %>.
+      <%= pluralize @errors, t("player.error_form") %>.
     </div>
     <% @player.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

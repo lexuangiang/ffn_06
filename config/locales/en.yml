@@ -60,3 +60,10 @@ en:
     select_club: "Select one"
     create_success: "Create success !"
     edit_success: "Edit success !"
+  score:
+    not_found: "score not found !"
+    edit: "Edit score infomation"
+    new: "Create new score"
+    error_form: " The form contains Errors"
+    create_success: "Create success !"
+    edit_success: "Edit success !"

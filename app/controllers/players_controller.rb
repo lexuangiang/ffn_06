@@ -20,6 +20,7 @@ class PlayersController < ApplicationController
       flash[:warning] = I18n.t "player.create_success"
       redirect_to @player
     else
+      @errors = @player.errors.size
       render :new
     end
   end
