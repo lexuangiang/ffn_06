@@ -1,0 +1,18 @@
+<%= form_for @score do |f| %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= pluralize @errors, t("score.error_form") %>.
+    </div>
+    <% @score.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+
+  <%= f.label :home_score %>
+  <%= f.text_field :home_score %>
+
+  <%= f.label :away_score %>
+  <%= f.text_field :away_score %>
+
+  <%= f.submit %>
+<% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/delete_session", to: "sessions#destroy"
   resources :users , only: [:new, :show, :create, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :clubs, only: [:new, :create, :edit, :update, :show, :index]
-  resources :players, only: [:new, :create, :edit, :update, :show, :index]
+  resources :clubs
+  resources :players
+  resources :scores
 end
