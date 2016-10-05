@@ -67,3 +67,12 @@ en:
     error_form: " The form contains Errors"
     create_success: "Create success !"
     edit_success: "Edit success !"
+  layout:
+    about: "About Us"
+    about_content: "We are Giang & DOAN !^^!"
+    contact: "Contact Us"
+    headquater: "Our headquaters"
+    address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong, Da Nang"
+    telephone: "0908.02.07.94"
+    email: "xuangiangkt94@gmail.com || ledinhdoan.0083@gmail.com"
+    copyrights: "© 2016 football news & bet - ffn_06 "

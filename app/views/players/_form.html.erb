@@ -1,31 +1,35 @@
-<%= form_for @player, html: {multipart: true} do |f| %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      <%= pluralize @errors, t("player.error_form") %>.
-    </div>
-    <% @player.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @player, html: {multipart: true} do |f| %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          <%= pluralize @errors, t("player.error_form") %>.
+        </div>
+        <% @player.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </div>
+      <%= f.label :player_name, class: "col-md-4 control-label" %>
+      <%= f.text_field :player_name, class: "form-control" %>
+
+      <%= f.label :nationality, class: "col-md-4 control-label" %>
+      <%= f.text_field :nationality, class: "form-control" %>
+
+      <%= f. label :position, class: "col-md-4 control-label" %>
+      <%= f.text_field :position, class: "form-control" %>
+
+      <%= f.label :weight, class: "col-md-4 control-label" %>
+      <%= f.text_field :weight, class: "form-control" %>
+
+      <%= f.label :height, class: "col-md-4 control-label" %>
+      <%= f.text_field :height, class: "form-control" %>
+
+      <%= f.label :club_id, class: "col-md-4 control-label" %>
+      <%= f.select :club_id, @clubs.collect{|player| [player.club_name,player.id]},
+        prompt: t("player.select_club"), class: "form-control" %>
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+
+      <%= f.submit %>
     <% end %>
   </div>
-  <%= f.label :player_name %>
-  <%= f.text_field :player_name %>
-
-  <%= f.label :nationality %>
-  <%= f.text_field :nationality %>
-
-  <%= f. label :position %>
-  <%= f.text_field :position %>
-
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
-
-  <%= f.label :height %>
-  <%= f.text_field :height %>
-
-  <%= f.label :club_id %>
-  <%= f.select :club_id, @clubs.collect{|player| [player.club_name,player.id]},
-    prompt: t("player.select_club") %>
-  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-
-  <%= f.submit %>
-<% end %>
+</div>
