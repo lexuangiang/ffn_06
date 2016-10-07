@@ -1,0 +1,12 @@
+<h1><%= t "users.all" %></h1>
+<ul class="users">
+  <% @user.each do |user| %>
+    <li>
+      <%= link_to user.user_name, user %>
+      <% if current_user.isadmin? && !current_user?(user) %>
+        <%= link_to t("users.delete"), admin_user_path(user), method: :delete,
+          data: {confirm: t("users.sure")} %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

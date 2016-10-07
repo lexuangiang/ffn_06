@@ -35,6 +35,9 @@ en:
   update: "Update your profile"
   save: "Save changes"
   setting: "Settings"
+  admin:
+    adminpage: "Admin Page"
+    admin: "ADMIN"
   index:
     title: "This is the title of index page"
   users:
@@ -43,6 +46,13 @@ en:
     not_found: "cannot found users"
     singup: "Sign Up"
     create: "Create my Account"
+    pleaselogin: "Please login"
+    deleted: "User Deleted"
+    destroy_fail: "User Destoy fails"
+    all: "All Users"
+    delete: "Delete"
+    sure: "Are you sure ?"
+    user: "USER"
   club:
     error_image: "should be less than 5MB"
     edit: "Edit club infomation"

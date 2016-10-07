@@ -38,9 +38,6 @@
               <li><%= link_to t("clubs"), clubs_path %></li>
               <li><%= link_to t("help"), "#" %></li>
               <% if logged_in? %>
-                <% if current_user.isadmin? %>
-                  <li><%= link_to t("admin.admin"), admin_path %></li>
-                <% end %>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <%= t "account" %> <b class="caret"></b>
