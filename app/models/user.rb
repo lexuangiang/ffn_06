@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   before_save {self.email = email.downcase}
   has_secure_password
+
+  scope :asc_by_name, ->{order user_name: :asc}
 end
