@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       flash[:success] = I18n.t "users.success"
       redirect_to @user
     else
+      @errors_count = @user.errors.size
       render :new
     end
   end
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
       flash[:success] = I18n.t "update"
       redirect_to @user
     else
+      @errors_count = @user.errors.size
       render :edit
     end
   end

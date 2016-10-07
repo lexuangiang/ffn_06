@@ -5,8 +5,8 @@ class Player < ApplicationRecord
   validates :player_name, presence: true
   validates :nationality, presence: true
   validates :position, presence: true
-  validates :height, presence: true
-  validates :weight, presence: true
+  validates :height, presence: true, numericality: {greater_than: 0}
+  validates :weight, presence: true, numericality: {greater_than: 0}
   validates :club_id, presence: true
   validate :picture_size
 

@@ -1,0 +1,8 @@
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="col-sm-3 col-md-4">
+      <%= link_to category.category_rates, category_match_rate_path(category) %>
+    </div>
+  <% end %>
+  <%= will_paginate @categories %>
+</div>

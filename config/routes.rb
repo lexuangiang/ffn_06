@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :clubs
   resources :players
   resources :scores
+  resources :category_match_rates
   namespace :admin do
     resources :users
   end

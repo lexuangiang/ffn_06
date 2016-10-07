@@ -5,5 +5,6 @@ class CreateCategoryMatchRates < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    rename_column :category_match_rates, :cmr_name, :category_rates
   end
 end
