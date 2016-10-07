@@ -61,6 +61,11 @@ en:
     club_not_found: "Clubs not found !"
     error_form: " The form contains Errors"
     players_list: "Players list"
+    name: "Club name"
+    location: "Location"
+    coach: "Coach"
+    stadium: "Stadium"
+    founding: "Founding"
   player:
     error_image: "should be less than 5MB"
     not_found: "Player not found !"
@@ -70,6 +75,11 @@ en:
     select_club: "Select one"
     create_success: "Create success !"
     edit_success: "Edit success !"
+    name: "Player name"
+    nationality: "Nationality"
+    position: "Position"
+    weight: "Weight"
+    height: "Height"
   score:
     not_found: "score not found !"
     edit: "Edit score infomation"
@@ -77,6 +87,8 @@ en:
     error_form: " The form contains Errors"
     create_success: "Create success !"
     edit_success: "Edit success !"
+    home_score: "Home score"
+    away_score: "Away score"
   layout:
     about: "About Us"
     about_content: "We are Giang & DOAN !^^!"

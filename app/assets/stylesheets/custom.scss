@@ -168,6 +168,10 @@ label{
 }
 .main-body {
     padding: 0px 0 5em 0;
+
+}
+.row .col-md-4{
+  padding-top: 30px;
 }
 h3.title-head {
   font-size: 2.5em;
@@ -264,3 +268,6 @@ ul.location {
   margin-left:2px;
 }
 /*-- //footer --*/
+.wrap .show-details{
+  text-align: center;
+}

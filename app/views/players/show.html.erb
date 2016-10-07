@@ -1,6 +1,19 @@
-<%= image_tag @player.image.url if @player.image? %>
-<%= @player.player_name %>
-<%= @player.nationality %>
-<%= @player.position %>
-<%= @player.weight %>
-<%= @player.height %>
+<div class="show-details">
+  <%= image_tag @player.image.url if @player.image? %>
+  <div class="panel panel-success">
+    <div class="panel-heading"><%= t "player.name" %></div>
+    <div class="panel-body"><%= @player.player_name %></div>
+
+    <div class="panel-heading"><%= t "player.nationality" %></div>
+    <div class="panel-body"><%= @player.nationality %></div>
+
+    <div class="panel-heading"><%= t "player.position" %></div>
+    <div class="panel-body"><%= @player.position %></div>
+
+    <div class="panel-heading"><%= t "player.weight" %></div>
+    <div class="panel-body"><%= @player.weight %></div>
+
+    <div class="panel-heading"><%= t "player.height" %></div>
+    <div class="panel-body"><%= @player.height %></div>
+  </div>
+</div>
