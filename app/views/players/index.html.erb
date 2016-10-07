@@ -1,12 +1,10 @@
 <div class="row">
   <% @players.each do |player| %>
-    <div class="col-sm-4">
-      <p>
-        <%= link_to player.player_name, player_path(player) %>
-      </p>
-      <p>
+    <div class="col-sm-3 col-md-4">
+      <%= link_to player_path(player) do %>
         <%= image_tag player.image.url if player.image? %>
-      </p>
+      <% end %>
+      <%= link_to player.player_name, player_path(player) %>
     </div>
   <% end %>
   <%= will_paginate @players %>
