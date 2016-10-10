@@ -19,7 +19,7 @@ class ScoresController < ApplicationController
       flash[:success] = t "score.create_success"
       redirect_to @score
     else
-      @errors = @score.errors.size
+      @errors_count = @score.errors.size
       render :new
     end
   end
@@ -32,6 +32,7 @@ class ScoresController < ApplicationController
       flash[:warning] = t "score.edit_success"
       redirect_to @score
     else
+      @errors_count = @score.errors.size
       render :edit
     end
   end

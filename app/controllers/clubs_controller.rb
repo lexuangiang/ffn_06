@@ -20,7 +20,7 @@ class ClubsController < ApplicationController
     if @club.save
       redirect_to @club
     else
-      @errors = @club.errors.size
+      @errors_count = @club.errors.size
       render :new
     end
   end
@@ -32,6 +32,7 @@ class ClubsController < ApplicationController
     if @club.update_attributes club_params
       redirect_to @club
     else
+      @errors_count = @club.errors.size
       render :edit
     end
   end

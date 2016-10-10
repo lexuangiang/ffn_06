@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   before_action :check_correct_player, only: [:edit, :show, :update]
-
+  before_action :prepare_form_data, except: [:index, :show]
   def index
     @players = Player.asc_by_name.paginate page: params[:page],
       per_page: Settings.per_page
@@ -9,18 +9,19 @@ class PlayersController < ApplicationController
   def show
   end
 
+
   def new
     @player = Player.new
-    @clubs = Club.all
   end
 
   def create
     @player = Player.new player_params
     if @player.save
-      flash[:warning] = I18n.t "player.create_success"
+      flash[:success] = t "player.create_success"
       redirect_to @player
     else
-      @errors = @player.errors.size
+      @errors_count = @player.errors.size
+      flash[:warning] = t "player.create_fail"
       render :new
     end
   end
@@ -30,9 +31,11 @@ class PlayersController < ApplicationController
 
   def update
     if @player.update_attributes player_params
-      flash[:warning] = I18n.t "player.edit_success"
+      flash[:success] = t "player.edit_success"
       redirect_to @player
     else
+      @errors_count = @player.errors.size
+      flash[:success] = t "player.edit_fail"
       render :edit
     end
   end
@@ -46,8 +49,12 @@ class PlayersController < ApplicationController
   def check_correct_player
     @player = Player.find_by id: params[:id]
     unless @player
-      flash[:warning] = I18n.t "player.not_found"
+      flash[:warning] = t "player.not_found"
       redirect_to root_path
     end
+  end
+
+  def prepare_form_data
+    @clubs = Club.all
   end
 end

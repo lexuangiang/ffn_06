@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001092026) do
+ActiveRecord::Schema.define(version: 20161007092244) do
 
   create_table "bets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.float    "home_coin",  limit: 24
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20161001092026) do
   end
 
   create_table "category_match_rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "cmr_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "category_rates"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "category_news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

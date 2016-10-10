@@ -1,16 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @score do |f| %>
-      <% if @score.errors.any? %>
-        <div id="error_explanation">
-          <div class="alert alert-danger">
-            <%= pluralize @errors, t("score.error_form") %>.
-          </div>
-          <% @score.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render "shared/error_messages", object: @score %>
 
       <%= f.label :home_score, class: "col-md-4 control-label" %>
       <%= f.text_field :home_score, class: "form-control" %>
