@@ -1,0 +1,9 @@
+<div class="row">
+  <% @rates.each do |rate| %>
+    <div class="col-sm-3 col-md-4">
+      <%= link_to rate.home_rate, rate_path(rate) %>
+      <%= link_to rate.away_rate, rate_path(rate) %>
+    </div>
+  <% end %>
+  <%= will_paginate @rate %>
+</div>
