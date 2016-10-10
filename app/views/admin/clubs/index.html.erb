@@ -1,0 +1,17 @@
+<%= link_to t("club.new"), new_admin_club_path %>
+<div class="row">
+  <% @clubs.each do |club| %>
+    <div class="col-sm-2 col-md-3">
+      <%= link_to club_path(club) do %>
+        <%= image_tag club.image.url if club.image? %>
+      <% end %>
+      <%= link_to club.club_name, club_path(club) %>
+      <% if current_user.isadmin? %>
+          <%= link_to t("club.edits"), edit_admin_club_path(club) %>
+          <%= link_to t("club.delete"), admin_club_path(club), method: :delete,
+            data: {confirm: t("club.sure")} %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= will_paginate @clubs %>
+</div>

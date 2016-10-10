@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  before_action :check_correct_club, only: [:edit, :show]
+  before_action :check_correct_club, only: :show
 
   def index
     @clubs = Club.asc_by_name.paginate page: params[:page],
@@ -11,38 +11,7 @@ class ClubsController < ApplicationController
       per_page: Settings.per_page
   end
 
-  def new
-    @club = Club.new
-  end
-
-  def create
-    @club = Club.new club_params
-    if @club.save
-      redirect_to @club
-    else
-      @errors_count = @club.errors.size
-      render :new
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @club.update_attributes club_params
-      redirect_to @club
-    else
-      @errors_count = @club.errors.size
-      render :edit
-    end
-  end
-
   private
-  def club_params
-    params.require(:club).permit :club_name, :location, :stadium,
-      :coach, :founding,:image
-  end
-
   def check_correct_club
     @club = Club.find_by id: params[:id]
     unless @club

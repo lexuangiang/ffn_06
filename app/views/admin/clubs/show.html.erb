@@ -1,0 +1,26 @@
+  <div class="show-details">
+  <%= image_tag @club.image.url if @club.image? %><br>
+  <div class="panel panel-success">
+    <div class="panel-heading"><%= t "club.name" %></div>
+    <div class="panel-body"><%= @club.club_name %></div>
+
+    <div class="panel-heading"><%= t "club.location" %></div>
+    <div class="panel-body"><%= @club.location %></div>
+
+    <div class="panel-heading"><%= t "club.coach" %></div>
+    <div class="panel-body"><%= @club.coach %></div>
+
+    <div class="panel-heading"><%= t "club.stadium" %></div>
+    <div class="panel-body"><%= @club.stadium %></div>
+
+    <div class="panel-heading"><%= t "club.founding" %></div>
+    <div class="panel-body"><%= @club.founding %></div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= t "club.players_list" %></div>
+    <% @players.each do |player| %>
+      <div class="panel-body">
+        <%= link_to player.player_name, player_path(player) %></div>
+    <% end %>
+  </div>
+</div>

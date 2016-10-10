@@ -1,6 +1,6 @@
 class Club < ApplicationRecord
   has_many :matches, dependent: :destroy
-  has_many :players
+  has_many :players, dependent: :destroy
 
   mount_uploader :image, PictureUploader
   validates :club_name, presence: true

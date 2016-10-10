@@ -66,6 +66,12 @@ en:
     coach: "Coach"
     stadium: "Stadium"
     founding: "Founding"
+    clubs: "CLUBS"
+    edits: "Edit"
+    delete: "Delete"
+    sure: "Are you sure?"
+    deleted: "Club Deleted"
+    destroy_fail: "Club destroy fail"
   player:
     players: "Players"
     error_image: "should be less than 5MB"
