@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @player, html: {multipart: true} do |f| %>
+    <%= form_for [:admin, @player], html: {multipart: true} do |f| %>
       <%= render "shared/error_messages", object: @player %>
 
       <%= f.label :player_name, class: "col-md-4 control-label" %>

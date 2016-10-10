@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   resources :users , except: [:index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :clubs
-  resources :players
+  resources :players, only: [:index, :show]
   resources :scores
   resources :category_match_rates
   namespace :admin do
     resources :users
+    resources :players
   end
   get "admin", to: "admin/welcome#home"
   delete "/delete_admin", to: "admin/users#destroy"
