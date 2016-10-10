@@ -1,0 +1,13 @@
+<div class="row">
+  <% @category_news.each do |category| %>
+    <div class="col-sm-3 col-md-4">
+      <%= link_to category.category_name, admin_category_news_path(category) %>
+      <% if current_user.isadmin? %>
+        <%= link_to t("category_news.edits"), edit_admin_category_news_path(category)%>
+        <%= link_to t("category_news.delete"), admin_category_news_path(category),
+          method: :delete, data: {confirm: t("category_news.sure")} %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= will_paginate @category_news %>
+</div>

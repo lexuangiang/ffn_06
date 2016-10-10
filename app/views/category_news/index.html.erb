@@ -1,0 +1,8 @@
+<div class="row">
+  <% @category_news.each do |category| %>
+    <div class="col-sm-3 col-md-4">
+      <%= link_to category.category_name, category_news_path(category) %>
+    </div>
+  <% end %>
+  <%= will_paginate @category_news %>
+</div>
