@@ -1,0 +1,19 @@
+<%= link_to t("player.new"), new_admin_player_path %>
+<div class="row">
+  <% @players.each do |player| %>
+    <div class="col-sm-2">
+      <p>
+        <%= link_to player.player_name, admin_player_path(player) %>
+        <% if current_user.isadmin? %>
+          <%=link_to t("player.edits"), edit_admin_player_path(player)%>
+          <%= link_to t("player.delete"), admin_player_path(player), method: :delete,
+            data: {confirm: t("player.sure")} %>
+        <% end %>
+      </p>
+      <p>
+        <%= image_tag player.image.url if player.image? %>
+      </p>
+    </div>
+  <% end %>
+  <%= will_paginate @players %>
+</div>
