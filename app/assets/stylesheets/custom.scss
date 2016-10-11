@@ -1,6 +1,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.content-left {
+    padding-left: 0;
+}
+.single-post {
+    width: 80%;
+    float: right;
+  }
+  .blog-posts h3 {
+    font-size: 1.7em;
+  }
+  .last-article {
+  background: #fff;
+  padding: 0 0 2em 0em;
+}
+.articles {
+    margin: 4em 0;
+}
+.article {
+  border-bottom: 1px solid #eee;
+    margin-top: 3.5em;
+    padding-bottom: 3em;
+}
+.article:last-child {
+    border: none;
+}
+.article-left {
+    width: 50%;
+    float: left;
+  margin-right:3%;
+}
+.article-right {
+    float: right;
+    width: 47%;
+}
+.article-title p {
+    color: #B5B3B3;
+    font-size: 0.875em;
+    font-style: italic;
+    margin: 0.5em 0;
+  text-transform: uppercase;
+}
 body{
   padding:0;
   font-family: 'Varela Round', sans-serif;

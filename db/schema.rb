@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007092244) do
+ActiveRecord::Schema.define(version: 20161011040243) do
 
   create_table "bets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.float    "home_coin",  limit: 24
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20161007092244) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "image"
     t.index ["category_news_id"], name: "index_news_on_category_news_id", using: :btree
     t.index ["user_id"], name: "index_news_on_user_id", using: :btree
   end
