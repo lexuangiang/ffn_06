@@ -1,0 +1,14 @@
+<div class="row">
+  <% @news.each do |news| %>
+    <div class="col-sm-2">
+      <p>
+        <%= image_tag news.image.url if news.image? %>
+        <%= link_to news.title, news_path(news) %>
+      </p>
+      <p>
+
+      </p>
+    </div>
+  <% end %>
+  <%= will_paginate @news %>
+</div>
