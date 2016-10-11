@@ -1,0 +1,15 @@
+<%= link_to t("score.new"), new_admin_score_path %>
+<div class="row">
+  <% @scores.each do |score| %>
+    <div class="col-sm-4">
+      <p><%= score.home_score %></p>
+      <p><%= score.away_score %></p>
+      <% if current_user.isadmin? %>
+          <%= link_to t("score.edits"), edit_admin_score_path(score) %>
+          <%= link_to t("score.delete"), admin_score_path(score), method: :delete,
+            data: {confirm: t("score.sure")} %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= will_paginate @score %>
+</div>

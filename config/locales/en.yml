@@ -101,6 +101,13 @@ en:
     edit_success: "Edit success !"
     home_score: "Home score"
     away_score: "Away score"
+    edits: "Edit"
+    delete: "Delete"
+    score: "SCORES"
+    sure: "Are you sure"
+    deleted: "Score Deleted"
+    destroy_fail: "Score destroy fail"
+    new: "Create Score"
   layout:
     about: "About Us"
     about_content: "We are Giang & DOAN !^^!"
