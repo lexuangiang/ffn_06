@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :clubs, only: [:index, :show]
   resources :players, only: [:index, :show]
-  resources :scores
+  resources :scores, only: [:index, :show]
   resources :category_match_rates
   resources :rates, only: [:index, :show]
   resources :category_news, only: [:index, :show]
   namespace :admin do
-    resources :users, :players, :rates, :clubs, :category_news
+    resources :users, :players, :rates, :clubs, :category_news, :scores
   end
   get "admin", to: "admin/welcome#home"
   delete "/delete_admin", to: "admin/users#destroy"
