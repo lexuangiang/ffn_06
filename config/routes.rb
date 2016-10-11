@@ -6,15 +6,13 @@ Rails.application.routes.draw do
   delete "/delete_session", to: "sessions#destroy"
   resources :users , except: [:index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :clubs
+  resources :clubs, only: [:index, :show]
   resources :players, only: [:index, :show]
   resources :scores
   resources :category_match_rates
   resources :rates, only: [:index, :show]
   namespace :admin do
-    resources :users
-    resources :players
-    resources :users, :rates
+    resources :users, :players, :rates, :clubs
   end
   get "admin", to: "admin/welcome#home"
   delete "/delete_admin", to: "admin/users#destroy"

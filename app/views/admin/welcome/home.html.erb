@@ -1,3 +1,8 @@
-<h1><%= t "admin.adminpage" %></h1>
-<%=link_to t("users.user"),admin_users_path %>
-<%=link_to t("player.players"),admin_players_path %>
+<div class="row">
+  <div class="col-sm-4">
+    <h1><%= t "admin.adminpage" %></h1>
+    <p><%= link_to t("users.user"), admin_users_path %></p>
+    <p><%= link_to t("players"), admin_players_path %></p>
+    <p><%= link_to t("club.clubs"), admin_clubs_path %></p>
+  </div>
+</div>
