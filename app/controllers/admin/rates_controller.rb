@@ -52,7 +52,8 @@ class Admin::RatesController < ApplicationController
 
   private
   def rate_params
-    params.require(:rate).permit :home_rate, :away_rate, :category_match_rate_id
+    params.require(:rate).permit :home_rate, :away_rate, :category_match_rate_id,
+      :rate_name
   end
 
   def load_rate

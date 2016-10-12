@@ -58,10 +58,8 @@ ActiveRecord::Schema.define(version: 20161011040243) do
     t.integer  "home_id"
     t.integer  "away_id"
     t.integer  "rate_id"
-    t.integer  "club_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["club_id"], name: "index_matches_on_club_id", using: :btree
     t.index ["rate_id"], name: "index_matches_on_rate_id", using: :btree
   end
 
@@ -109,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161011040243) do
   end
 
   create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "rate_name"
     t.float    "home_rate",              limit: 24
     t.float    "away_rate",              limit: 24
     t.integer  "category_match_rate_id"
@@ -140,13 +139,11 @@ ActiveRecord::Schema.define(version: 20161011040243) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "password_digest"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   add_foreign_key "bets", "matches"
   add_foreign_key "bets", "scores"
   add_foreign_key "bets", "users"
-  add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "rates"
   add_foreign_key "news", "category_news"
   add_foreign_key "news", "users"

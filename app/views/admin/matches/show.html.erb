@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t"match.match_date" %></th>
+          <th><%= t"match.match_time" %></th>
+          <th colspan="4"><%= t"match.club" %></th>
+          <th><%= t"match.match_status" %></th>
+          <th><%= t"match.home_rate" %></th>
+          <th><%= t"match.away_rate" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @match.match_date.strftime("%d,%B,%Y") %></td>
+          <td><%= @match.match_time.strftime("%r") %></td>
+          <td><%= @match.home.club_name %></td>
+          <td><%= @match.home_goal %></td>
+          <td><%= @match.away_goal %></td>
+          <td><%= @match.away.club_name %></td>
+          <td><%= @match.match_status? ? t("match.open"): t("match.close") %></td>
+          <td><%= @match.rate.home_rate %></td>
+          <td><%= @match.rate.away_rate %></td>
+          <td><%= @match.rate.category_match_rate.category_rates %></td>
+          <% if current_user.isadmin? %>
+            <td><%= link_to t("match.edits"), edit_admin_match_path(@match) %>
+            </td>
+            <td><%= link_to t("match.delete"), admin_match_path(@match), method: :delete, data: {confirm: t("club.sure")} %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

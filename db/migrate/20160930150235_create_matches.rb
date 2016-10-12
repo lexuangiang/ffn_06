@@ -9,7 +9,6 @@ class CreateMatches < ActiveRecord::Migration[5.0]
       t.integer :home_id
       t.integer :away_id
       t.references :rate, foreign_key: true
-      t.references :club, foreign_key: true
 
       t.timestamps
     end

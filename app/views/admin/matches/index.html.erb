@@ -1,0 +1,39 @@
+<%= link_to t("match.new"), new_admin_match_path %>
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t"match.match_date" %></th>
+          <th><%= t"match.match_time" %></th>
+          <th colspan="4"><%= t"match.club" %></th>
+          <th><%= t"match.match_status" %></th>
+          <th><%= t"match.home_rate" %></th>
+          <th><%= t"match.away_rate" %></th>
+        </tr>
+      </thead>
+    <% @matches.each do |match| %>
+      <tbody>
+        <tr>
+          <td><%= match.match_date.strftime("%d,%B,%Y") %></td>
+          <td><%= match.match_time.strftime("%r") %></td>
+          <td><%= link_to match.home.club_name, club_path(match.home) %></td>
+          <td><%= match.home_goal %></td>
+          <td><%= match.away_goal %></td>
+          <td><%= link_to match.away.club_name, club_path(match.away) %></td>
+          <td><%= match.match_status? ? t("match.open"): t("match.close") %></td>
+          <td><%= match.rate.home_rate %></td>
+          <td><%= match.rate.away_rate %></td>
+          <td><%= link_to t("match.info"), admin_match_path(match) %></td>
+          <% if current_user.isadmin? %>
+            <td><%= link_to t("match.edits"), edit_admin_match_path(match) %>
+            </td>
+            <td><%= link_to t("match.delete"), admin_match_path(match), method: :delete, data: {confirm: t("club.sure")} %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+  </div>
+</div>
+<%= will_paginate @matches %>

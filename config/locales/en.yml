@@ -1,28 +1,8 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   football: "FOOTBALL"
   home: "HOME"
+  matches: "MATCHES"
   help: "HELP"
   login: "LOGIN"
   about: "ABOUT"
@@ -170,3 +150,25 @@ en:
     error_image: "should be less than 5MB"
     created_at: "Post at"
     new: "Create new news"
+  match:
+    open: "Opening"
+    close: "Close"
+    create_success: "Create match success !"
+    create_fail: "Create match fail !"
+    update_success: "Update match success !"
+    update_fail: "Update match fail !"
+    not_found: "match not found"
+    deleted: "Deleted match"
+    delete_fail: "Delete fail"
+    match_date: "date"
+    match_time: "time"
+    match_status: "status"
+    club: "Home vs Away"
+    rate: "Rate"
+    info: "Info"
+    edit: "Edit match infomation"
+    new: "Create new match"
+    date_time_format: "dd/mm/yyyy"
+    check_club: "club cannot equal away club"
+    vs: "vs"
+

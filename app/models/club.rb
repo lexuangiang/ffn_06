@@ -1,6 +1,7 @@
 class Club < ApplicationRecord
-  has_many :matches, dependent: :destroy
   has_many :players, dependent: :destroy
+  has_many :home, :class_name => "Match", :foreign_key => "home_id"
+  has_many :away, :class_name => "Match", :foreign_key => "away_id"
 
   mount_uploader :image, PictureUploader
   validates :club_name, presence: true

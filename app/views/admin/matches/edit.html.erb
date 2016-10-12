@@ -1,0 +1,45 @@
+<div class="panel panel-info">
+  <div class="panel-heading"><h1><%= t "match.edit" %></h1></div>
+  <div class="panel-body">
+    <%= form_for [:admin, @match], html: {multipart: true} do |f| %>
+      <%= render "shared/error_messages", object: @match %>
+      <div class="form-group">
+        <%= f.label :match_date, class: "col-md-4 control-label" %>
+        <%= f.date_field :match_date, placeholder: t("match.date_time_format"),
+          class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :match_time, class: "col-md-4 control-label" %>
+        <%= f.time_select :match_time, :ignore_date => true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :home_goal, class: "col-md-4 control-label" %>
+        <%= f.text_field :home_goal, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :away_goal, class: "col-md-4 control-label" %>
+        <%= f.text_field :away_goal, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :match_status, class: "col-md-4 control-label" %>
+        <%= f.check_box :match_status %>
+      </div>
+      <div class="form-group">
+        <%= f. label :home_id, class: "col-md-4 control-label" %>
+        <%= f.collection_select :home_id, @clubs, :id, :club_name,
+          prompt: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :away_id, class: "col-md-4 control-label" %>
+        <%= f.collection_select :away_id, @clubs, :id, :club_name,
+          prompt: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :rate_id, class: "col-md-4 control-label" %>
+        <%= f.collection_select :rate_id, @rates, :id, :home_rate,
+          prompt: true %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
